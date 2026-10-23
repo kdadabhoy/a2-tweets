@@ -14,7 +14,8 @@ function parseTweets(runkeeper_tweets) {
 	document.getElementById('numberTweets').innerText = tweet_array.length;	
 
 
-	// Earliest/Latest Tweet Stuff (Idea is to convert all dates to a numbers and get max and min):
+	// -- Earliest/Latest Tweet --
+		// Idea is to convert all dates to a numbers and get max and min):
 
 	// Creates an array of times (time, in ms, since Jan 1, 1970, 0:00:00.000 GMT) for each tweet
 	var times = tweet_array.map(function(tweet) {
@@ -33,6 +34,24 @@ function parseTweets(runkeeper_tweets) {
 
 	document.getElementById('firstDate').innerText = earliestTweet.toLocaleDateString('en-US', dateOptions);
 	document.getElementById('lastDate').innerText = latestTweet.toLocaleDateString('en-US', dateOptions);
+
+	// -- End: Earliest/Latest Tweet -- 
+
+	// -- Tweet Categories --
+
+	var completed = tweet_array.filter(function(tweet){
+		return tweet.source == 'completed_event';
+	});
+	
+	// TODO: write a for loop to get all instances of this... maybe helper functions (bc [0] might not be good enough)
+	document.getElementsByClassName('completedEvents')[0].innerText = completed.length;
+	document.getElementsByClassName('completedEventsPct')[0].innerText = math.format(completed.length / tweet_array.length * 100, {notation: 'fixed', precision:2}) + '%';
+
+
+
+	// -- End: Tweet Categories --
+
+
 
 }
 
