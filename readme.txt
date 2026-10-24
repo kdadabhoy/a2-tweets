@@ -30,6 +30,11 @@
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+- https://vega.github.io/vega-lite/docs/encoding.html
+- 
 
 
 
