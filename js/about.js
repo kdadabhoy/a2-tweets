@@ -39,18 +39,60 @@ function parseTweets(runkeeper_tweets) {
 
 	// -- Tweet Categories --
 
-	var completed = tweet_array.filter(function(tweet){
-		return tweet.source == 'completed_event';
+	// Helpers:
+	function setSpans(className, value) {
+		var spans = document.getElementsByClassName(className);
+		for (var i = 0; i < spans.length; i++) {
+			spans[i].innerText = value;
+		}
+	}
+
+	function formatPercentage(numerator, denominator) {
+		return math.format(numerator / denominator * 100, {notation: 'fixed', precision:2}) + '%';
+	}
+
+	// End Helpers
+
+
+	var completed = tweet_array.filter(function(tweet) { 
+		return tweet.source === 'completed_event'; 
+	});
+
+	var live = tweet_array.filter(function(tweet) { 
+		return tweet.source === 'live_event'; 
 	});
 	
-	// TODO: write a for loop to get all instances of this... maybe helper functions (bc [0] might not be good enough)
-	document.getElementsByClassName('completedEvents')[0].innerText = completed.length;
-	document.getElementsByClassName('completedEventsPct')[0].innerText = math.format(completed.length / tweet_array.length * 100, {notation: 'fixed', precision:2}) + '%';
+	var achievements = tweet_array.filter(function(tweet) { 
+		return tweet.source === 'achievement'; 
+	});
 
+	var miscellaneous = tweet_array.filter(function(tweet) { 
+		return tweet.source === 'miscellaneous'; 
+	});
 
+	setSpans('completedEvents', completed.length);
+	setSpans('completedEventsPct', formatPercentage(completed.length, tweet_array.length));
+	setSpans('liveEvents', live.length);
+	setSpans('liveEventsPct', formatPercentage(live.length, tweet_array.length));
+	setSpans('achievements', achievements.length);
+	setSpans('achievementsPct', formatPercentage(achievements.length, tweet_array.length));
+	setSpans('miscellaneous', miscellaneous.length);
+	setSpans('miscellaneousPct', formatPercentage(miscellaneous.length, tweet_array.length));
 
 	// -- End: Tweet Categories --
 
+
+
+	// -- User-written Tweets --
+	var writtenCompleted = completed.filter(function(tweet) {
+		return tweet.written;
+	});
+
+	setSpans('written', writtenCompleted.length);
+	setSpans('writtenPct', formatPercentage(writtenCompleted.length, completed.length));
+
+
+	// -- End: User-written Tweets --
 
 
 }

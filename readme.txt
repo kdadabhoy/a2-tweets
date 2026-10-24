@@ -28,6 +28,9 @@
 - https://mathjs.org/docs/reference/functions/format.html
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
 
 
 
@@ -35,8 +38,8 @@
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-
+None.
 
 
 5. Is there anything special we need to know in order to run your code?
-
+No.
