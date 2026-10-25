@@ -3,16 +3,19 @@
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
 */10
-- */3 Summarizing tweets
-- */4 Identifying the most popular activities
-- */3 Adding a text search interface
+- 3/3 Summarizing tweets
+- 4/4 Identifying the most popular activities
+- 3/3 Adding a text search interface
 
 2. How long, in hours, did it take you to complete this assignment?
-
+Around 15 hours. 
 
 
 3. What online resources did you consult when completing this assignment? (list sites like StackOverflow or specific URLs for tutorials; describe queries to Generative AI or use of AI-based code completion)
-- AI to explain to me what lines of code do (callbacks, .map(function(tweet)), and stuff like that).
+
+I used AI to help me understand what certain lines of code do and how they work (like callbacks, .map(function(tweet)), some vega-lite syntax, etc). 
+Additionally, AI was used to help debug some code I was writing (mainly pointing out trivial syntax errors) and in verifying my logic was correct (mainly for the Part 2 stuff that could've been hard-coded, but that I decided to write out the logic for). 
+    - The only function I really leaned on AI for was for getHTMLTableRow(). I started with an idea and then iterated and improved it with an AI. 
 
 ** Not every website I ever touched, but most of them ** 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
@@ -34,16 +37,10 @@
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 - https://vega.github.io/vega-lite/docs/encoding.html
-- 
-
-
-
-
-
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-None.
+No one.
 
 
 5. Is there anything special we need to know in order to run your code?

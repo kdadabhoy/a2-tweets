@@ -7,6 +7,8 @@ class Tweet {
         this.time = new Date(tweet_time);//, "ddd MMM D HH:mm:ss Z YYYY"
     }
 
+
+
     //returns either 'live_event', 'achievement', 'completed_event', or 'miscellaneous'
     get source(): string {
         // Completed identified with:
@@ -35,10 +37,14 @@ class Tweet {
         }
     }
 
+
+
     //returns a boolean, whether the text includes any content written by the person tweeting.
     get written(): boolean {
         return this.userText.length > 0;
     }
+
+
 
     // returns the user-written text or an empty string if there is no user-written text.
     get writtenText(): string {
@@ -101,9 +107,23 @@ class Tweet {
         return 0;
     }
 
+
+
+
     getHTMLTableRow(rowNumber: number): string {
-        //TODO: return a table row which summarizes the tweet with a clickable link to the RunKeeper activity
-        return "<tr></tr>";
+        let words = this.text.split(" ");
+
+        let linkedWords = [];
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+            if (word.startsWith("https://")) {
+                word = '<a href="' + word + '" target="_blank">' + word + '</a>';
+            }
+            linkedWords.push(word);
+        }
+        let linkedText = linkedWords.join(" ");
+
+        return "<tr><td>" + rowNumber + "</td><td>" + this.activityType + "</td><td>" + linkedText + "</td></tr>";
     }
 
 
